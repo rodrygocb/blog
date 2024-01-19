@@ -1,6 +1,24 @@
 <!-- app/views/admins/home/index.html.erb -->
 <h1>Bem-vindo à página inicial do Admin!</h1>
 
+    <%= form_for(:admins, url: admins_home_path) do |f| %>
+        <select name="type">
+          <option value="secretaria">Secretaria</option>
+          <option value="unidade">Unidade</option>
+          <option value="funcionario">Funcionário</option>
+          <option value="atendente">Atendente</option>
+          <option value="visitante">Visitante</option>
+        </select>
+      
+        <%= f.submit "Cadastrar" %>
+      <% end %>
+      
+      
+      <br><br><br><br><br><br>
 
-
+      <%= link_to 'Registrar Admin', new_admin_registration_path %> <br>
+      <%= link_to 'Registrar Atendente', new_attendant_registration_path %> <br>
+      <%= link_to 'Registrar Funcionário', new_employee_registration_path %> <br>
+      
+      
 
