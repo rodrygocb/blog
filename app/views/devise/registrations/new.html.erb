@@ -7,11 +7,28 @@
 
   <!-- Seus campos existentes do Devise (e-mail, senha, confirmação de senha, etc.) -->
 
-  <!-- Novos campos específicos de Employee -->
-  <!-- Novos campos específicos de Employee -->
-<%= f.label :type %>
-<%= f.select :type, Employee.employee_types.keys %>
 
+<div class="field">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+
+<div class="field">
+<%= f.label :password %>
+<% if @minimum_password_length %>
+<em>(<%= @minimum_password_length %> characters minimum)</em>
+<% end %><br />
+<%= f.password_field :password, autocomplete: "new-password" %>
+</div>
+
+<div class="field">
+<%= f.label :password_confirmation %><br />
+<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+</div>
+
+
+<!-- Novos campos específicos de Employee -->
   <%= f.label :nome %>
   <%= f.text_field :nome %>
 
@@ -34,11 +51,6 @@
   <%= f.text_field :cargo %>
 
   <!-- Restante do formulário -->
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
