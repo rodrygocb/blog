@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 class Employees::RegistrationsController < Devise::RegistrationsController
+
+# app/controllers/employees/registrations_controller.rb
+  before_action :configure_sign_up_params, only: [:create]
+
+  protected
+
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:type, :nome, :cpf, :rg, :telefone, :secretaria, :unidade, :cargo])
+  end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 

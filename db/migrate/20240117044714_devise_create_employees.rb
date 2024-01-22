@@ -14,6 +14,15 @@ class DeviseCreateEmployees < ActiveRecord::Migration[7.1]
       ## Rememberable
       t.datetime :remember_created_at
 
+      add_column :employees, :type, :integer
+          add_column :employees, :nome, :string
+          add_column :employees, :cpf, :string
+          add_column :employees, :rg, :string
+          add_column :employees, :telefone, :string
+          add_column :employees, :secretaria, :string
+          add_column :employees, :unidade, :string
+          add_column :employees, :cargo, :string
+      
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at

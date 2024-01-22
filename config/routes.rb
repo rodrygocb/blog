@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     registrations: 'attendants/registrations'
   }
   
+  
   devise_for :employees, controllers: {
     sessions: 'employees/sessions',
     registrations: 'employees/registrations'
